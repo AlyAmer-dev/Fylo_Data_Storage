@@ -1,0 +1,258 @@
+
+:root {
+
+    --step--2: clamp(0.78rem, calc(0.71rem + 0.38vw), 1.00rem);
+    --step--1: clamp(0.94rem, calc(0.83rem + 0.54vw), 1.25rem);
+    --step-0: clamp(1.13rem, calc(0.97rem + 0.76vw), 1.56rem);
+    --step-1: clamp(1.35rem, calc(1.14rem + 1.05vw), 1.95rem);
+    --step-2: clamp(1.62rem, calc(1.33rem + 1.43vw), 2.44rem);
+    --step-3: clamp(1.94rem, calc(1.56rem + 1.93vw), 3.05rem);
+    --step-4: clamp(2.33rem, calc(1.82rem + 2.58vw), 3.82rem);
+    --step-5: clamp(2.80rem, calc(2.11rem + 3.42vw), 4.77rem);
+  }
+
+* {
+
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/** Framework */
+
+.container {
+
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/*? Small */
+
+@media (min-width: 768px) {
+
+    .container {
+        width: 750px;
+  }
+}
+
+/*? Medium */
+
+@media (min-width: 992px) {
+  
+    .container {
+        width: 970px;
+  }
+}
+
+/*? Large */
+
+@media (min-width: 1200px) {
+
+    .container {
+        width: 1170px;
+  }
+}
+
+.fff {
+
+    color: #fff;
+}
+
+.flex {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/** The Styling  */
+
+body {
+
+    font-size: var(--step-0);
+    min-height: 100vh;
+    background-image: url(images/bg-desktop.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: hsl(229, 57%, 11%);
+    font-family: monospace;
+}
+
+main {
+
+    display: flex;
+    gap: 30px;
+}
+
+section:first-of-type {
+   
+    background-color: hsl(228, 56%, 26%);
+    min-width: 230px;
+    padding: 30px;
+    padding-right: 90px;
+    border-radius: 10px;
+    border-top-right-radius: 90px;
+}
+
+section:first-of-type > img.icon {
+
+    width: 110px;
+}
+
+section:first-of-type > div {
+
+    margin-top: 20px;
+}
+
+section:first-of-type > div img.icon {
+    
+    background-color: hsl(229, 57%, 11%);
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+section:last-of-type {
+
+    color: #fff;
+    background-color: hsl(228, 56%, 26%);
+    padding: 25px;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    row-gap: 15px;
+    margin-top: 34px;
+    border-radius: 10px;
+    width: 50%;
+}
+
+section:last-of-type > p {
+
+    font-size: 14px;
+    color: #fff6;
+}
+
+section:last-of-type .span {
+
+    position: absolute;
+    top: -46px;
+    right: 0;
+}
+
+section:last-of-type .span > span {
+
+    background-color: #fefefe;
+    padding: 8px 20px;
+    border-radius: 10px;
+    color: #333;
+    font-size: 13px;
+    gap: 10px;
+    position: relative;
+}
+
+section:last-of-type .span > span::after {
+
+    content: "";
+    position: absolute;
+    border: 31px solid;
+    border-color: #fefefe transparent transparent transparent;
+    top: 37px;
+    left: 98px;
+    transform: rotate(-16deg);
+}
+
+section:last-of-type .span span h1 {
+
+    color: #000;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+section:last-of-type .bar {
+
+    width: 100%;
+    background-color: hsl(229, 57%, 11%);
+    height: 20px;
+    overflow: hidden;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+section:last-of-type .bar span {
+
+    display: inline-block;
+    height: 80%;
+    width: 80%;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    margin-left: 2px;
+    position: relative;
+}
+
+section:last-of-type .bar span::after {
+
+    content: '';
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+}
+
+section:last-of-type div:last-of-type {
+
+    font-size: 14px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/** Medias */
+
+    /*? Mobile */
+
+@media (max-width: 769px) {
+
+    body {
+        background-image: url(images/bg-mobile.png);
+    }
+
+    section {
+        width: 100% !important;
+    }
+    
+    main {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    section:last-of-type .span > span::after {
+        display: none;
+    }
+
+    section:last-of-type .span {
+        top: 91%;
+        right: calc(50% - 75px);
+    }
+
+    section:last-of-type {
+        margin-top: 0px;
+    }
+}
+
+    /*? Small Mobile */
+
+@media (max-width: 281px) {
+
+    section:first-of-type {
+        padding-right: 0px;
+    }
+
+    section:last-of-type .span {
+        top: 140px;
+    }
+}
